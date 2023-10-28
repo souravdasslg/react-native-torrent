@@ -1,8 +1,10 @@
-package com.torrent
+package com.souravdasslg.rntorrent
 
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.bridge.ReactMethod
 import com.facebook.react.bridge.Promise
+import org.libtorrent4j.AlertListener
+import org.libtorrent4j.LibTorrent;
 
 class TorrentModule internal constructor(context: ReactApplicationContext) :
   TorrentSpec(context) {
@@ -11,11 +13,9 @@ class TorrentModule internal constructor(context: ReactApplicationContext) :
     return NAME
   }
 
-  // Example method
-  // See https://reactnative.dev/docs/native-modules-android
   @ReactMethod
-  override fun multiply(a: Double, b: Double, promise: Promise) {
-    promise.resolve(a * b)
+  override fun getLibTorrentVersion(): String {
+    return LibTorrent.version()
   }
 
   companion object {
