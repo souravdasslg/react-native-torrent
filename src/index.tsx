@@ -24,6 +24,6 @@ const Torrent = TorrentModule
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return Torrent.multiply(a, b);
+export function getLibTorrentVersion(): string {
+  return Torrent.getLibTorrentVersion();
 }
